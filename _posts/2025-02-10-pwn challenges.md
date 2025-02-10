@@ -54,7 +54,7 @@ While my school did teach basic data structures (PUSH, POP), it was not really h
 
 <br>
 
-To my readers, if you ever attempt to learn pwn, please learn the basics of stack :) It will help you visualise and understand techniques at memory level. Once you able grasp this fundamental well, it becomes a lot easier to learn different techniques.
+To my readers, if you ever attempt to learn pwn, please learn the basics of stack :) It will help you visualise and understand techniques at memory level. Once you are able grasp this fundamental well, it becomes a lot easier to learn different techniques.
 
 <br>
 
