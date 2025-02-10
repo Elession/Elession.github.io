@@ -12,9 +12,15 @@ Across the last few weeks, I had to build challenges as part of my final project
 
 Not the most ideal way to learn how programs work, but I also wanted to learn how programs can be exploited.
 
+<br>
+
 Prior to the project, I felt that there a lot of gaps in my knowledge of pwn and this was a great opportunity to fill those gaps as much as I could.
 
+<br>
+
 I have never coded in C before, but it was not too hard considering most of the time I could just google up to get a better understanding of the C programming syntaxes.
+
+<br>
 
 **NOTE:** I have only covered some stack-based concepts and techniques.
 
