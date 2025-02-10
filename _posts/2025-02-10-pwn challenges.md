@@ -12,15 +12,29 @@ Across the last few weeks, I had to build challenges as part of my final project
 
 ## Why Pwn?
 
-Simply because I was not good at it.
-
 <br>
 
-Prior to the project, I felt that there a lot of gaps in my knowledge of pwn and this was a great opportunity to fill those gaps as much as I could.
+Prior to the project, I had some idea about pwn but felt that there a lot of gaps in my knowledge and this was a great opportunity to fill those gaps as much as I could.
 
 <br>
 
 I have also never coded in C before, but it was not too hard considering most of the time I could just google up to get a better understanding of the C programming syntaxes.
+
+<br>
+
+Simply put: I was not good at Pwn. 
+
+<br>
+
+But every time I say I am not good at something, this scene from Haikyuu always pops in my mind:
+
+<br>
+
+![](\assets\images\pwn-challenges\limits.png)
+
+<br>
+
+This then got me started.
 
 <br>
 
@@ -29,6 +43,8 @@ I have also never coded in C before, but it was not too hard considering most of
 <br>
 
 ## The journey
+
+<br>
 
 ### 1. Lack of understanding of the stack memory
 
@@ -66,11 +82,13 @@ This became obvious once I started dealing with **Return-Oriented Programming (R
 
 <br>
 
-After not being able to figure out how to get the gadgets I wanted for quite awhile, I went to [Elma](https://blog.elmo.sg/) who is an expert at pwn.
+After not being able to figure out how to get the gadgets I wanted for quite awhile, I went to [Elma](https://blog.elmo.sg/) who is an expert at pwn (Big thank you). 
 
 <br>
 
 ![Advice](/assets/images/pwn-challenges/elma.png)
+
+<br>
 
 ### Solution
 
@@ -135,7 +153,7 @@ This time not solving meant a lot more to me since I did my best trying to learn
 
 <br>
 
-I had a lot of fun learning and building pwn challenges. While I acknowledge that I have a little more experience with pwn now, there is still a lot more to it and I hope to continue to learn from people who are way better than I am while teaching others what I know.
+I had a lot of fun learning pwn and building pwn challenges. While I acknowledge that I have a little more experience with pwn now, there is still a lot more to it and I hope to continue to learn from people who are way better than I am while teaching others what I know.
 
 <br>
 
