@@ -123,6 +123,8 @@ When I started testing challenges on remote (Docker), there was no output from m
 
 While this problem also took time, I was able to figure out that it was due to the buffering involved in C programming. This meant that the program output was stored in buffer temporarily until I made an input.
 
+<br>
+
 This snippet of code helps to disable buffering, which ensures all I/O & errors are shown immediately:
 
 ```c
