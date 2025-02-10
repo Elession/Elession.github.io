@@ -109,7 +109,7 @@ This adds `pop rdx ; ret` to the program.
 
 <br>
 
-For older compilers, I used Docker to install `Ubuntu 18.04` image. IT does not come with `gcc` so I downloaded it and saved this container as a new image so I do not need to install `gcc` everytime I use the image. I also utilised volume mounting which allowed me to directly compile C programs on the host VM.
+For older compilers, I used Docker to install `Ubuntu 18.04` image. It does not come with `gcc` so I downloaded it and saved this container as a new image so I do not need to install `gcc` everytime I use the image. I also utilised volume mounting which allowed me to directly compile C programs on the host VM.
 
 <br>
 
