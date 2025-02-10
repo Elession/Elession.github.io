@@ -167,6 +167,10 @@ I had a lot of fun learning pwn and building pwn challenges. While I acknowledge
 
 Just about anything that goes in my infosec life. I'm currently planning to do HackTheBox labs and retake CRTP (Certified Red Team Professional) certification that I failed back in October 2024.
 
+<br>
+
+If you've made it this far, THANK YOU FOR READING :D
+
 
 
 
