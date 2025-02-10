@@ -92,6 +92,8 @@ After not being able to figure out how to get the gadgets I wanted for quite awh
 
 ### Solution
 
+<br>
+
 I actually tried both methods. For inline assembly, you can program your code to add gadgets like this:
 
 ```c
@@ -142,6 +144,8 @@ I actually attended AYCEP twice before this and there seems to be this trend of 
 <br>
 
 Being able solve the pwn challenges during qualifiers...and not a single one during finals. Truly a humbling experience.
+
+![Advice](/assets/images/pwn-challenges/cope.png)
 
 <br>
 
