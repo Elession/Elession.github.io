@@ -12,7 +12,7 @@ Across the last few weeks, I had to build challenges as part of my final project
 
 ## Why Pwn?
 
-Not the most ideal way to learn how programs work, but I also wanted to learn how programs can be exploited.
+Simply because I was not good at it.
 
 <br>
 
@@ -20,15 +20,19 @@ Prior to the project, I felt that there a lot of gaps in my knowledge of pwn and
 
 <br>
 
-I have never coded in C before, but it was not too hard considering most of the time I could just google up to get a better understanding of the C programming syntaxes.
+I have also never coded in C before, but it was not too hard considering most of the time I could just google up to get a better understanding of the C programming syntaxes.
 
 <br>
 
-**NOTE:** I have only covered some stack-based concepts and techniques.
+**NOTE:** I have only covered some stack-based concepts and techniques over the span of a few weeks.
+
+<br>
 
 ## The journey
 
 ### 1. Lack of understanding of the stack memory
+
+<br>
 
 While my school did teach basic data structures (PUSH, POP), it was not really helpful since I was not able to put it to practical use...until now.
 
@@ -42,9 +46,13 @@ Really good resource here: [CTF101](https://ctf101.org/binary-exploitation/what-
 
 <br>
 
-Special thanks to [baesenseii](https://baesenseii.sg/) for clearing my misconception of the stack frame.
+Special thanks to [baesenseii](https://baesenseii.sg/) for clearing my misconceptions.
+
+<br>
 
 ### 2. Different glibc versions
+
+<br>
 
 Compiling with different `glibc` versions will result in having different set of gadgets and functions. A lot of common gadgets like `pop rdi ; ret` are removed in the newer versions of `glibc`, which was something I did not know at that point in time. This also makes certain techniques like `ret2csu` outdated.
 
@@ -81,7 +89,67 @@ This adds `pop rdx ; ret` to the program.
 
 <br>
 
-For older compilers, I used Docker to install `Ubuntu 18.04` image. IT does not come with `gcc` so I downloaded it and saved this container as a new image so I do not need to install `gcc` everytime I use the image. I also utilised volume mounting which allowed me to directly compile C programs on the host.
+For older compilers, I used Docker to install `Ubuntu 18.04` image. IT does not come with `gcc` so I downloaded it and saved this container as a new image so I do not need to install `gcc` everytime I use the image. I also utilised volume mounting which allowed me to directly compile C programs on the host VM.
+
+<br>
+
+### 3. Buffering
+
+<br>
+
+When I started testing challenges on remote (Docker), there was no output from my program although I had connected to it. 
+
+<br>
+
+While this problem also took time, I was able to figure out that it was due to the buffering involved in C programming. This meant that the program output was stored in buffer temporarily until I made an input.
+
+This snippet of code helps to disable buffering, which ensures all I/O & errors are shown immediately:
+
+```c
+setvbuf(stdout, NULL, _IONBF, 0);
+setvbuf(stdin, NULL, _IONBF, 0);
+setvbuf(stderr, NULL, _IONBF, 0);
+```
+
+<br>
+
+### 4. AYCEP (Div0-N0h4ts)
+
+During my project, I set aside time to attend this programme and it was really meaningful. It was a privilege to be taught more advanced pwn techniques and also got introduced to kernel exploits (which tbh I still haven't got a clue to how to do it but I can do it soon enough).
+
+<br>
+
+I actually attended AYCEP twice before this and there seems to be this trend of me getting rekt in finals CTF (3 consecutive AYCEP finals CTF btw).
+
+<br>
+
+Being able solve the pwn challenges during qualifiers...and not a single one during finals. Truly a humbling experience.
+
+<br>
+
+This time not solving meant a lot more to me since I did my best trying to learn. While I did feel defeated, I continued to try and solve the challenge that I could not right even after the CTF ended (it was a `ret2syscall` challenge).
+
+<br>
+
+## Closing thoughts
+
+<br>
+
+I had a lot of fun learning and building pwn challenges. While I acknowledge that I have a little more experience with pwn now, there is still a lot more to it and I hope to continue to learn from people who are way better than I am while teaching others what I know.
+
+<br>
+
+## What's to come for this blog
+
+<br>
+
+Just about anything that goes in my infosec life. I'm currently planning to do HackTheBox labs and retake CRTP (Certified Red Team Professional) certification that I failed back in October 2024.
+
+
+
+
+
+
 
 
 
