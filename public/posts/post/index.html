@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  The pwn experience · Elession
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Elession">
+<meta name="description" content="Across the last few weeks, I had to build challenges as part of my final project. I had the opportunity to decide and I landed on Binary Exploitation (or pwn).
+
+  Why Pwn?
+  
+    
+    Link to heading
+  
+
+Prior to the project, I had some idea about pwn but felt that there a lot of gaps in my knowledge and this was a great opportunity to fill those gaps as much as I could.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The pwn experience">
+  <meta name="twitter:description" content="Across the last few weeks, I had to build challenges as part of my final project. I had the opportunity to decide and I landed on Binary Exploitation (or pwn).
+Why Pwn? Link to heading Prior to the project, I had some idea about pwn but felt that there a lot of gaps in my knowledge and this was a great opportunity to fill those gaps as much as I could.">
+
+<meta property="og:url" content="http://localhost:1313/posts/post/">
+  <meta property="og:site_name" content="Elession">
+  <meta property="og:title" content="The pwn experience">
+  <meta property="og:description" content="Across the last few weeks, I had to build challenges as part of my final project. I had the opportunity to decide and I landed on Binary Exploitation (or pwn).
+Why Pwn? Link to heading Prior to the project, I had some idea about pwn but felt that there a lot of gaps in my knowledge and this was a great opportunity to fill those gaps as much as I could.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-10T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/post/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Elession
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/post/">
+              The pwn experience
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-02-10T00:00:00Z">
+                February 10, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/pwn/">Pwn</a></div>
+
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Across the last few weeks, I had to build challenges as part of my final project. I had the opportunity to decide and I landed on Binary Exploitation (or pwn).</p>
+<h2 id="why-pwn">
+  Why Pwn?
+  <a class="heading-link" href="#why-pwn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Prior to the project, I had some idea about pwn but felt that there a lot of gaps in my knowledge and this was a great opportunity to fill those gaps as much as I could.</p>
+<p>I have also never coded in C before, but it was not too hard considering most of the time I could just google up to get a better understanding of the C programming syntaxes.</p>
+<p>Simply put: I was not good at Pwn.</p>
+<p>But every time I say I am not good at something, this scene from Haikyuu always pops in my mind:</p>
+<p><img src="/images/compile.png" alt=""></p>
+<p>This then got me started.</p>
+<p><strong>NOTE:</strong> I have only covered some stack-based concepts and techniques over the span of a few weeks.</p>
+<h2 id="the-journey">
+  The journey
+  <a class="heading-link" href="#the-journey">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-lack-of-understanding-of-the-stack-memory">
+  1. Lack of understanding of the stack memory
+  <a class="heading-link" href="#1-lack-of-understanding-of-the-stack-memory">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>While my school did teach basic data structures (PUSH, POP), it was not really helpful since I was not able to put it to practical use&hellip;until now.</p>
+<p>To my readers, if you ever attempt to learn pwn, please learn the basics of stack :) It will help you visualise and understand techniques at memory level. Once you are able grasp this fundamental well, it becomes a lot easier to learn different techniques.</p>
+<p>Really good resource here: <a href="https://ctf101.org/binary-exploitation/what-is-the-stack/"  class="external-link" target="_blank" rel="noopener">CTF101</a></p>
+<p>Special thanks to <a href="https://baesenseii.sg/"  class="external-link" target="_blank" rel="noopener">baesenseii</a> for clearing my misconceptions.</p>
+<h3 id="2-different-glibc-versions">
+  2. Different glibc versions
+  <a class="heading-link" href="#2-different-glibc-versions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Compiling with different <code>glibc</code> versions will result in having different set of gadgets and functions. A lot of common gadgets like <code>pop rdi ; ret</code> are removed in the newer versions of <code>glibc</code>, which was something I did not know at that point in time. This also makes certain techniques like <code>ret2csu</code> outdated.</p>
+<p>This became obvious once I started dealing with <strong>Return-Oriented Programming (ROP).</strong> This is what happens when you try to look for gadgets you can typically find from other programs.</p>
+<p><img src="/static/images/compile.png" alt="glibc 2.40"></p>
+<p>After not being able to figure out how to get the gadgets I wanted for quite awhile, I went to <a href="https://blog.elmo.sg/"  class="external-link" target="_blank" rel="noopener">Elma</a> who is an expert at pwn (Big thank you).</p>
+<p><img src="/images/elma.png" alt=""></p>
+<h3 id="solution">
+  Solution
+  <a class="heading-link" href="#solution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>I actually tried both methods. For inline assembly, you can program your code to add gadgets like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">void</span> <span style="color:#d2a8ff;font-weight:bold">gadget</span>() {
+</span></span><span style="display:flex;"><span>    __asm__ <span style="color:#ff7b72">volatile</span> (
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;pop %rdx</span><span style="color:#79c0ff">\n\t</span><span style="color:#a5d6ff">&#34;</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#a5d6ff">&#34;ret</span><span style="color:#79c0ff">\n\t</span><span style="color:#a5d6ff">&#34;</span>       
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This adds <code>pop rdx ; ret</code> to the program.</p>
+<p>For older compilers, I used Docker to install <code>Ubuntu 18.04</code> image. It does not come with <code>gcc</code> so I downloaded it and saved this container as a new image so I do not need to install <code>gcc</code> everytime I use the image. I also utilised volume mounting which allowed me to directly compile C programs on the host VM.</p>
+<h3 id="3-buffering">
+  3. Buffering
+  <a class="heading-link" href="#3-buffering">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>When I started testing challenges on remote (Docker), there was no output from my program although I had connected to it.</p>
+<p>While this problem also took time, I was able to figure out that it was due to the buffering involved in C programming. This meant that the program output was stored in buffer temporarily until I made an input.</p>
+<p>This snippet of code helps to disable buffering, which ensures all I/O &amp; errors are shown immediately:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">setvbuf</span>(stdout, NULL, _IONBF, <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">setvbuf</span>(stdin, NULL, _IONBF, <span style="color:#a5d6ff">0</span>);
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">setvbuf</span>(stderr, NULL, _IONBF, <span style="color:#a5d6ff">0</span>);
+</span></span></code></pre></div><h3 id="4-aycep-div0-n0h4ts">
+  4. AYCEP (Div0-N0h4ts)
+  <a class="heading-link" href="#4-aycep-div0-n0h4ts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>During my project, I set aside time to attend this programme and it was really meaningful. It was a privilege to be taught more advanced pwn techniques and also got introduced to kernel exploits (which tbh I still haven&rsquo;t got a clue to how to do it but I can do it soon enough).</p>
+<p>I actually attended AYCEP twice before this and there seems to be this trend of me getting rekt in finals CTF (3 consecutive AYCEP finals CTF btw).</p>
+<p>Being able solve the pwn challenges during qualifiers&hellip;and not a single one during finals. Truly a humbling experience.</p>
+<p><img src="/images/cope.png" alt=""></p>
+<p>This time not solving meant a lot more to me since I did my best trying to learn. While I did feel defeated, I continued to try and solve the challenge that I could not right even after the CTF ended (it was a <code>ret2syscall</code> challenge).</p>
+<h2 id="closing-thoughts">
+  Closing thoughts
+  <a class="heading-link" href="#closing-thoughts">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I had a lot of fun learning pwn and building pwn challenges. While I acknowledge that I have a little more experience with pwn now, there is still a lot more to it and I hope to continue to learn from people who are way better than I am while teaching others what I know.</p>
+<h2 id="whats-to-come-for-this-blog">
+  What&rsquo;s to come for this blog
+  <a class="heading-link" href="#whats-to-come-for-this-blog">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Just about anything that goes in my infosec life. I&rsquo;m currently planning to do HackTheBox labs and retake CRTP (Certified Red Team Professional) certification that I failed back in October 2024.</p>
+<p>If you&rsquo;ve made it this far, THANK YOU FOR READING :D</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kurasama" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2025
+     Elession 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
