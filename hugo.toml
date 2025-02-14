@@ -9,8 +9,6 @@ defaultcontentlanguage = "en"
 pagerSize = 20
 
 [services]
-[services.disqus]
-shortname = "kurasama"
 
 [markup.highlight]
 style = "github-dark"
