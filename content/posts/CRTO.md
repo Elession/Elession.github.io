@@ -24,7 +24,7 @@ This, of course meant that I had diverted from what I had set out to do but I th
 
 ## Content
 
-The course has a heavy emphasis on OPSEC, teaching you how certain actions you take can lead to detection by the blue team. You will also learn how to use [Cobalt Strike](https://www.cobaltstrike.com/) and modify your payloads to evade AVs. There is also some content on Active Directory and Kerberos provided in the course.
+The course has a heavy emphasis on OPSEC, teaching you how certain actions you take can lead to detection by the blue team. You will also learn how to use [Cobalt Strike](https://www.cobaltstrike.com/) and modify your payloads to evade AVs. There is also some content on Active Directory provided in the course.
 
 Theory was relatively straight-forward, and whatever I searched outside of the course was to make up for my lack of foundation or to fulfil my curiosity thereof. 
 
