@@ -34,7 +34,7 @@ There are also challenges which come with no guidance unlike the labs, which was
 
 ## Exam
 
-Unlike the previous exam format required you to submit 6/8 flags in order to pass (at least from what I know), the new exam format requires to complete your operational objective with OPSEC considerations. This meant disruptive actions can prevent you from passing. 
+Unlike the previous exam format required you to submit 6/8 flags in order to pass (at least from what I know), the new exam format requires to complete your operational objective with OPSEC considerations. This meant noisy actions can prevent you from passing. 
 
 I took 2 attempts in total, passing on my 2nd one. 
 
