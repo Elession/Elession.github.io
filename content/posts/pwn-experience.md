@@ -46,7 +46,7 @@ Compiling with different `glibc` versions will result in having different set of
 This became obvious once I started dealing with **Return-Oriented Programming (ROP).** This is what happens when you try to look for gadgets you can typically find from other programs.
 
 
-![glibc 2.40](/static/images/compile.png)
+![glibc 2.40](/images/compile.png)
 
 
 After not being able to figure out how to get the gadgets I wanted for quite awhile, I went to [Elma](https://blog.elmo.sg/) who is an expert at pwn (Big thank you). 
