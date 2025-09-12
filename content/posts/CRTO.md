@@ -47,7 +47,7 @@ For my 1st attempt, I truthfully ended the exam early after time sinking more th
 
 I took a total of ~3 months to fully complete the course + exam. Other than random events, it could have definitely been done in a **much** shorter time frame with less procrastination. When I was going through the content, [this](https://gatari.dev/posts/long-live-the-shellcode/) kept popping up in my head, especially since I got tested by the man himself at STANDCON 2025.
 
-**!**: Something I learnt was having a study buddy can benefit your learning a lot, especially asking each other questions. Big thanks to [baesenseii](https://www.linkedin.com/in/sayedhamzah/) 
+**!**: Something I learnt was having a study buddy can benefit your learning a lot, especially asking each other questions. Big thanks to [baesenseii](https://www.linkedin.com/in/sayedhamzah/). His [blog](https://baesenseii.sg/) to sum kool stuff as well.
 
 Googling for stuff that you may not fully understand is highly encouraged to help grasp the content better. There is also a Discord channel to share your questions that could benefit other people as well.
 
